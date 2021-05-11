@@ -1,0 +1,39 @@
+@import './../App.scss';
+.List {
+    .items-container {
+        @include dimensions(500px, 500px);
+        margin: 40px auto;
+        .item {
+            @include dimensions(180px, 180px);
+            padding: 10px;
+            margin: 8px;
+            @include simple-shadow(5px, 2px);
+            border-radius: 5px;
+            display: inline-block;
+            .icon {
+                margin-top: 30px;
+                width: 100%;
+                svg {
+                    @include dimensions(60px, 60px);
+                }
+            }
+        }
+    }
+
+    .pager-container {
+        font-size: 1em;
+        position: fixed;
+        bottom: 0;
+        @include dimensions(100%, 60px);
+        button,
+        select {
+            @include simple-button();
+            svg {
+                vertical-align: middle;
+            }
+        }
+        select {
+            padding: 4px 10px;
+        }
+    }
+}

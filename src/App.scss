@@ -1,0 +1,39 @@
+$main-color: rgb(72, 93, 211);
+
+$input-idle-color: rgb(150, 150, 150);
+$input-idle-background-color: #f7f7f7;
+
+$button-disabled: rgb(202, 202, 202);
+
+@mixin simple-shadow($blur, $spread) {
+  box-shadow: 1px 1px $blur $spread rgb(226, 226, 226);
+}
+
+@mixin simple-button {
+  background: white;
+  color: $main-color;
+  border: 2px solid $main-color;
+  padding: 6px 20px;
+  margin: 5px 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  &:disabled {
+    cursor: initial;
+    pointer-events: none;
+    color: $button-disabled;
+    border: 1px solid $button-disabled;
+  }
+  &:hover {
+    background: $main-color;
+    color: white;
+}
+}
+
+@mixin dimensions($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+.App {
+  text-align: center;
+}

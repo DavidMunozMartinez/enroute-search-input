@@ -1,0 +1,37 @@
+@import './../App.scss';
+
+.FilterInput {
+    @include dimensions(340px, 50px);
+    margin: 10px auto;
+    position: relative;
+    input {
+        @include dimensions(100%, 100%);
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px 50px 10px 10px;
+        outline: none;
+        font-size: 1.5em;
+        border-radius: 10px;
+        border: none;
+        background: $input-idle-background-color;
+        box-sizing: border-box;
+        transition: all 0.2s ease-in-out;
+        &::placeholder {
+            color: $input-idle-color;
+        }
+
+        &:focus {
+            background: white;
+            @include simple-shadow(10px, 3px);
+        }
+    }
+
+    svg {
+        @include dimensions(32px, 32px);
+        position: absolute;
+        left: calc(100% - 40px);
+        top: calc(100% - 40px);
+        color: $input-idle-color;
+    }
+}
